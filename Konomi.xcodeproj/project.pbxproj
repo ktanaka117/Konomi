@@ -27,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		295E9F021C9A7E170088A6A3 /* Konomi-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Konomi-Bridging-Header.h"; sourceTree = "<group>"; };
 		29CF269B1C912D2100635BB9 /* Konomi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Konomi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29CF269E1C912D2100635BB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29CF26A31C912D2100635BB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 				29CF26C51C912D9200635BB9 /* Model */,
 				29CF26C41C912D8000635BB9 /* DataModel */,
 				29CF269E1C912D2100635BB9 /* AppDelegate.swift */,
+				295E9F021C9A7E170088A6A3 /* Konomi-Bridging-Header.h */,
 				29CF26A21C912D2100635BB9 /* Main.storyboard */,
 				29CF26A51C912D2100635BB9 /* Assets.xcassets */,
 				29CF26A71C912D2100635BB9 /* LaunchScreen.storyboard */,
@@ -411,6 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ktanaka.Konomi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Konomi/Konomi-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -423,6 +426,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ktanaka.Konomi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Konomi/Konomi-Bridging-Header.h";
 			};
 			name = Release;
 		};

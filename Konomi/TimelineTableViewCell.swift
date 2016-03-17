@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MCSwipeTableViewCell
 
-class TimelineTableViewCell: UITableViewCell {
+class TimelineTableViewCell: MCSwipeTableViewCell, MCSwipeTableViewCellDelegate {
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
@@ -23,24 +25,12 @@ class TimelineTableViewCell: UITableViewCell {
         let view = UIView(frame: frame)
         view.tag = 10000
         addSubview(view)
+        
+        delegate = self
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
-        
-        position = touches.first?.locationInView(viewWithTag(10000))
+    func swipeTableViewCellDidEndSwiping(cell: MCSwipeTableViewCell!) {
+        print("swipeTableViewCellDidEndSwiping")
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
-        
-        let movedX = touches.first?.locationInView(self).x
-        frame.origin.x -= position!.x - movedX!
-    }
-    
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
-        
-        frame.origin.x = 0
-    }
 }

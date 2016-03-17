@@ -19,12 +19,19 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier("TimelineTableViewCell") as? TimelineTableViewCell else { fatalError("Cell couldn't be created.") }
         
+        let retweetView = UIView()
+        let favoriteView = UIView()
+        
+        let greenColor = UIColor.greenColor()
+        let redColor = UIColor.redColor()
+        
+        cell.setSwipeGestureWithView(retweetView, color: greenColor, mode: .Switch, state: .State1, completionBlock: { _, _, _ in })
+        cell.setSwipeGestureWithView(favoriteView, color: redColor, mode: .Switch, state: .State3, completionBlock: { _, _, _ in })
+        
         cell.screenNameLabel.text = "@\(tweets[indexPath.row].user.screenName)"
         cell.nameLabel.text = tweets[indexPath.row].user.name
         cell.descriptionLabel.text = tweets[indexPath.row].text
         cell.iconImageView.af_setImageWithURL(NSURL(string: tweets[indexPath.row].user.profileImageURL)!)
-        
-        cell.tag = indexPath.row
         
         return cell
     }
