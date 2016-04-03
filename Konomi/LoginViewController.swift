@@ -11,10 +11,10 @@ import UIKit
 class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         Login.login() { [unowned self] error in
             if error != nil { fatalError("\(error)") }
-            
-            print(Account.twitterAccount)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.transitionToTimelineTableVC()
