@@ -23,6 +23,7 @@
 		29CF26C81C912E8D00635BB9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF26C71C912E8D00635BB9 /* User.swift */; };
 		29CF27041C91873600635BB9 /* TimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF27031C91873600635BB9 /* TimelineDataSource.swift */; };
 		29CF27061C91891300635BB9 /* TimelineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF27051C91891300635BB9 /* TimelineDelegate.swift */; };
+		29EBF99D1CADA014007F5EED /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EBF99C1CADA014007F5EED /* Timeline.swift */; };
 		E560E018CB2F8FB5D00F5185 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9AD6B69CBDAFA7E56C1FE3 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		29CF26C71C912E8D00635BB9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		29CF27031C91873600635BB9 /* TimelineDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataSource.swift; sourceTree = "<group>"; };
 		29CF27051C91891300635BB9 /* TimelineDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDelegate.swift; sourceTree = "<group>"; };
+		29EBF99C1CADA014007F5EED /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		29F7E62D6AE1D8F4BD8CFAC5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5F652FD29697AB82151BE055 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A9AD6B69CBDAFA7E56C1FE3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,9 +111,10 @@
 		29CF26C41C912D8000635BB9 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				29CF26B61C912D7400635BB9 /* Router.swift */,
-				29CF26B81C912D7400635BB9 /* Login.swift */,
-				29CF26B11C912D7400635BB9 /* TwitterManager.swift */,
+				29CF26C71C912E8D00635BB9 /* User.swift */,
+				29CF26B21C912D7400635BB9 /* Tweet.swift */,
+				29CF26B91C912D7400635BB9 /* Account.swift */,
+				29EBF99C1CADA014007F5EED /* Timeline.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -119,9 +122,9 @@
 		29CF26C51C912D9200635BB9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				29CF26C71C912E8D00635BB9 /* User.swift */,
-				29CF26B21C912D7400635BB9 /* Tweet.swift */,
-				29CF26B91C912D7400635BB9 /* Account.swift */,
+				29CF26B61C912D7400635BB9 /* Router.swift */,
+				29CF26B81C912D7400635BB9 /* Login.swift */,
+				29CF26B11C912D7400635BB9 /* TwitterManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				29CF26BC1C912D7400635BB9 /* Tweet.swift in Sources */,
 				29CF26BB1C912D7400635BB9 /* TwitterManager.swift in Sources */,
 				29CF269F1C912D2100635BB9 /* AppDelegate.swift in Sources */,
+				29EBF99D1CADA014007F5EED /* Timeline.swift in Sources */,
 				29CF26C81C912E8D00635BB9 /* User.swift in Sources */,
 				29CF26BD1C912D7400635BB9 /* TimelineTableViewController.swift in Sources */,
 			);
