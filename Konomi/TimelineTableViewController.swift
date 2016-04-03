@@ -34,7 +34,7 @@ class TimelineTableViewController: UITableViewController {
         
         TwitterManager.getTimeline() { [weak self] tweets in
             guard let `self` = self else { return }
-            self.timelineDataSource.tweets = tweets
+            self.timelineDataSource.timeline = Timeline(tweets: tweets)
             self.tableView.reloadData()
             self.refresher.endRefreshing()
         }
