@@ -11,11 +11,15 @@ import SwiftyJSON
 struct Tweet {
     let id: String
     let text: String
+    var favorited: Bool!
+    var retweeted: Bool!
     let user: User
     
     init(json: JSON, user: User) {
         self.id = json["id_str"].stringValue
         self.text = json["text"].stringValue
+        self.favorited = json["favorited"].boolValue
+        self.retweeted = json["retweetes"].boolValue
         self.user = user
     }
 }
