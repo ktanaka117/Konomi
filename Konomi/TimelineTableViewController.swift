@@ -24,7 +24,7 @@ class TimelineTableViewController: UITableViewController {
         tableView.delegate = timelineDelegate
         
         refreshControl = refresher
-        refreshControl?.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: #selector(TimelineTableViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
         
         tableView.registerNib(UINib(nibName: "TimelineTableViewCell", bundle: nil), forCellReuseIdentifier: "TimelineTableViewCell")
     }
