@@ -11,9 +11,10 @@ import AlamofireImage
 
 class TimelineTableViewController: UITableViewController {
     
-    let timelineDataSource = TimelineDataSource()
-    let timelineDelegate = TimelineDelegate()
-    let refresher = UIRefreshControl()
+    private let timelineDataSource = TimelineDataSource()
+    private let timelineDelegate = TimelineDelegate()
+    
+    private let refresher = UIRefreshControl()
     
     override func viewDidLoad() {
         refresh()
