@@ -29,21 +29,39 @@ struct Timeline {
         return Timeline(tweets: mutableTweets)
     }
     
-    private func deleteTweetAtIndex(tweet: Tweet, index: Int) -> Timeline {
+    private func deleteTweetAtIndex(index: Int) -> Timeline {
         var mutableTweets = tweets
         mutableTweets.removeAtIndex(index)
         return Timeline(tweets: mutableTweets)
     }
     
     func favoriteTweetAtIndex(index: Int) -> Timeline {
+        let id = tweets[index].id
+        let text = tweets[index].text
+        let favorited = tweets[index].favorited
+        let retweeted = tweets[index].retweeted
+        let user = tweets[index].user
+        
+        let tweet = Tweet(id: id, text: text, favorited: !favorited, retweeted: retweeted, user: user)
+        
         var mutableTweets = tweets
-        mutableTweets[index].favorited = !mutableTweets[index].favorited
+        mutableTweets[index] = tweet
+        
         return Timeline(tweets: mutableTweets)
     }
     
     func retweetTweetAtIndex(index: Int) -> Timeline {
+        let id = tweets[index].id
+        let text = tweets[index].text
+        let favorited = tweets[index].favorited
+        let retweeted = tweets[index].retweeted
+        let user = tweets[index].user
+        
+        let tweet = Tweet(id: id, text: text, favorited: favorited, retweeted: !retweeted, user: user)
+        
         var mutableTweets = tweets
-        mutableTweets[index].retweeted = !mutableTweets[index].retweeted
+        mutableTweets[index] = tweet
+        
         return Timeline(tweets: mutableTweets)
     }
 }

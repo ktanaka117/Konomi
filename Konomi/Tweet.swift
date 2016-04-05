@@ -11,8 +11,8 @@ import SwiftyJSON
 struct Tweet {
     let id: String
     let text: String
-    var favorited: Bool!
-    var retweeted: Bool!
+    let favorited: Bool
+    let retweeted: Bool
     let user: User
     
     init(json: JSON, user: User) {
@@ -20,6 +20,14 @@ struct Tweet {
         self.text = json["text"].stringValue
         self.favorited = json["favorited"].boolValue
         self.retweeted = json["retweetes"].boolValue
+        self.user = user
+    }
+    
+    init(id: String, text: String, favorited: Bool, retweeted: Bool, user: User) {
+        self.id = id
+        self.text = text
+        self.favorited = favorited
+        self.retweeted = retweeted
         self.user = user
     }
 }
