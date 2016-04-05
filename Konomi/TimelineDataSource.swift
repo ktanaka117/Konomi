@@ -10,10 +10,10 @@ import UIKit
 
 class TimelineDataSource: NSObject, UITableViewDataSource {
     
-    var timeline: Timeline = Timeline(tweets: [])
+    var timeline: Timeline = Timeline(items: [])
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeline.numberOfTweet
+        return timeline.numberOfItems
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

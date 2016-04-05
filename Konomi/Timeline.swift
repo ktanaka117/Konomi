@@ -8,60 +8,62 @@
 
 import Foundation
 
-struct Timeline {
-    private var tweets: [Tweet] = []
+struct Timeline: DataType {
+    typealias ItemType = Tweet
     
-    init(tweets: [Tweet]) {
-        self.tweets = tweets
+    var items: [ItemType] = []
+    
+    init(items: [ItemType]) {
+        self.items = items
     }
     
-    var numberOfTweet: Int {
-        return tweets.count
+    var numberOfItems: Int {
+        return items.count
     }
     
     subscript(index: Int) -> Tweet {
-        return tweets[index]
+        return items[index]
     }
     
-    private func insertTweetAtIndex(tweet: Tweet, index: Int) -> Timeline {
-        var mutableTweets = tweets
-        mutableTweets.insert(tweet, atIndex: index)
-        return Timeline(tweets: mutableTweets)
+    func insertItemAtIndex(item: ItemType, index: Int) -> Timeline {
+        var mutableTweets = items
+        mutableTweets.insert(item, atIndex: index)
+        return Timeline(items: mutableTweets)
     }
     
-    private func deleteTweetAtIndex(index: Int) -> Timeline {
-        var mutableTweets = tweets
+    func deleteItemAtIndex(index: Int) -> Timeline {
+        var mutableTweets = items
         mutableTweets.removeAtIndex(index)
-        return Timeline(tweets: mutableTweets)
+        return Timeline(items: mutableTweets)
     }
     
     func favoriteTweetAtIndex(index: Int) -> Timeline {
-        let id = tweets[index].id
-        let text = tweets[index].text
-        let favorited = tweets[index].favorited
-        let retweeted = tweets[index].retweeted
-        let user = tweets[index].user
+        let id = items[index].id
+        let text = items[index].text
+        let favorited = items[index].favorited
+        let retweeted = items[index].retweeted
+        let user = items[index].user
         
         let tweet = Tweet(id: id, text: text, favorited: !favorited, retweeted: retweeted, user: user)
         
-        var mutableTweets = tweets
+        var mutableTweets = items
         mutableTweets[index] = tweet
         
-        return Timeline(tweets: mutableTweets)
+        return Timeline(items: mutableTweets)
     }
     
     func retweetTweetAtIndex(index: Int) -> Timeline {
-        let id = tweets[index].id
-        let text = tweets[index].text
-        let favorited = tweets[index].favorited
-        let retweeted = tweets[index].retweeted
-        let user = tweets[index].user
+        let id = items[index].id
+        let text = items[index].text
+        let favorited = items[index].favorited
+        let retweeted = items[index].retweeted
+        let user = items[index].user
         
         let tweet = Tweet(id: id, text: text, favorited: favorited, retweeted: !retweeted, user: user)
         
-        var mutableTweets = tweets
+        var mutableTweets = items
         mutableTweets[index] = tweet
         
-        return Timeline(tweets: mutableTweets)
+        return Timeline(items: mutableTweets)
     }
 }
