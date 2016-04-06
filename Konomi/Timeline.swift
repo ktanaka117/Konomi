@@ -38,32 +38,28 @@ struct Timeline: DataType {
     }
     
     func favoriteTweetAtIndex(index: Int) -> Timeline {
-        let id = items[index].id
-        let text = items[index].text
-        let favorited = items[index].favorited
-        let retweeted = items[index].retweeted
-        let user = items[index].user
+        let cacheTweet = items[index]
         
-        let tweet = Tweet(id: id, text: text, favorited: !favorited, retweeted: retweeted, user: user)
+        let tweet = Tweet(
+            id: cacheTweet.id,
+            text: cacheTweet.text,
+            favorited: !cacheTweet.favorited,
+            retweeted: cacheTweet.retweeted,
+            user: cacheTweet.user)
         
-        var mutableTweets = items
-        mutableTweets[index] = tweet
-        
-        return Timeline(items: mutableTweets)
+        return deleteItemAtIndex(index).insertItemAtIndex(tweet, index: index)
     }
     
     func retweetTweetAtIndex(index: Int) -> Timeline {
-        let id = items[index].id
-        let text = items[index].text
-        let favorited = items[index].favorited
-        let retweeted = items[index].retweeted
-        let user = items[index].user
+        let cacheTweet = items[index]
         
-        let tweet = Tweet(id: id, text: text, favorited: favorited, retweeted: !retweeted, user: user)
+        let tweet = Tweet(
+            id: cacheTweet.id,
+            text: cacheTweet.text,
+            favorited: cacheTweet.favorited,
+            retweeted: !cacheTweet.retweeted,
+            user: cacheTweet.user)
         
-        var mutableTweets = items
-        mutableTweets[index] = tweet
-        
-        return Timeline(items: mutableTweets)
+        return deleteItemAtIndex(index).insertItemAtIndex(tweet, index: index)
     }
 }
