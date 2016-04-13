@@ -33,4 +33,11 @@ class TimelineTableViewCell: MCSwipeTableViewCell, MCSwipeTableViewCellDelegate 
         print("swipeTableViewCellDidEndSwiping")
     }
     
+    func fillWith(tweet: Tweet) {
+        screenNameLabel.text = "@\(tweet.user.screenName)"
+        nameLabel.text = tweet.user.name
+        descriptionLabel.text = tweet.text
+        iconImageView.af_setImageWithURL(NSURL(string: tweet.user.profileImageURL)!)
+    }
+    
 }

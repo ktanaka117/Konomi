@@ -28,10 +28,7 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
         cell.setSwipeGestureWithView(retweetView, color: greenColor, mode: .Switch, state: .State1, completionBlock: { _, _, _ in })
         cell.setSwipeGestureWithView(favoriteView, color: redColor, mode: .Switch, state: .State3, completionBlock: { _, _, _ in })
         
-        cell.screenNameLabel.text = "@\(timeline[indexPath.row].user.screenName)"
-        cell.nameLabel.text = timeline[indexPath.row].user.name
-        cell.descriptionLabel.text = timeline[indexPath.row].text
-        cell.iconImageView.af_setImageWithURL(NSURL(string: timeline[indexPath.row].user.profileImageURL)!)
+        cell.fillWith(timeline[indexPath.row])
         
         return cell
     }
