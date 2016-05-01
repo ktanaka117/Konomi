@@ -8,42 +8,58 @@
 
 import Foundation
 
-struct Timeline {
-    private var tweets: [Tweet] = []
+struct Timeline: DataType {
+    typealias ItemType = Tweet
     
-    init(tweets: [Tweet]) {
-        self.tweets = tweets
+    var items: [ItemType] = []
+    
+    init(items: [ItemType]) {
+        self.items = items
     }
     
-    var numberOfTweet: Int {
-        return tweets.count
+    var numberOfItems: Int {
+        return items.count
     }
     
     subscript(index: Int) -> Tweet {
-        return tweets[index]
+        return items[index]
     }
     
-    private func insertTweetAtIndex(tweet: Tweet, index: Int) -> Timeline {
-        var mutableTweets = tweets
-        mutableTweets.insert(tweet, atIndex: index)
-        return Timeline(tweets: mutableTweets)
+    func insertItemAtIndex(item: ItemType, index: Int) -> Timeline {
+        var mutableTweets = items
+        mutableTweets.insert(item, atIndex: index)
+        return Timeline(items: mutableTweets)
     }
     
-    private func deleteTweetAtIndex(tweet: Tweet, index: Int) -> Timeline {
-        var mutableTweets = tweets
+    func deleteItemAtIndex(index: Int) -> Timeline {
+        var mutableTweets = items
         mutableTweets.removeAtIndex(index)
-        return Timeline(tweets: mutableTweets)
+        return Timeline(items: mutableTweets)
     }
     
     func favoriteTweetAtIndex(index: Int) -> Timeline {
-        var mutableTweets = tweets
-        mutableTweets[index].favorited = !mutableTweets[index].favorited
-        return Timeline(tweets: mutableTweets)
+        let cacheTweet = items[index]
+        
+        let tweet = Tweet(
+            id: cacheTweet.id,
+            text: cacheTweet.text,
+            favorited: !cacheTweet.favorited,
+            retweeted: cacheTweet.retweeted,
+            user: cacheTweet.user)
+        
+        return deleteItemAtIndex(index).insertItemAtIndex(tweet, index: index)
     }
     
     func retweetTweetAtIndex(index: Int) -> Timeline {
-        var mutableTweets = tweets
-        mutableTweets[index].retweeted = !mutableTweets[index].retweeted
-        return Timeline(tweets: mutableTweets)
+        let cacheTweet = items[index]
+        
+        let tweet = Tweet(
+            id: cacheTweet.id,
+            text: cacheTweet.text,
+            favorited: cacheTweet.favorited,
+            retweeted: !cacheTweet.retweeted,
+            user: cacheTweet.user)
+        
+        return deleteItemAtIndex(index).insertItemAtIndex(tweet, index: index)
     }
 }

@@ -10,10 +10,10 @@ import UIKit
 
 class TimelineDataSource: NSObject, UITableViewDataSource {
     
-    var timeline: Timeline = Timeline(tweets: [])
+    var timeline: Timeline = Timeline(items: [])
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timeline.numberOfTweet
+        return timeline.numberOfItems
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -28,10 +28,7 @@ class TimelineDataSource: NSObject, UITableViewDataSource {
         cell.setSwipeGestureWithView(retweetView, color: greenColor, mode: .Switch, state: .State1, completionBlock: { _, _, _ in })
         cell.setSwipeGestureWithView(favoriteView, color: redColor, mode: .Switch, state: .State3, completionBlock: { _, _, _ in })
         
-        cell.screenNameLabel.text = "@\(timeline[indexPath.row].user.screenName)"
-        cell.nameLabel.text = timeline[indexPath.row].user.name
-        cell.descriptionLabel.text = timeline[indexPath.row].text
-        cell.iconImageView.af_setImageWithURL(NSURL(string: timeline[indexPath.row].user.profileImageURL)!)
+        cell.fillWith(timeline[indexPath.row])
         
         return cell
     }

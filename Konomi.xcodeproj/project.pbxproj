@@ -24,6 +24,7 @@
 		29CF27041C91873600635BB9 /* TimelineDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF27031C91873600635BB9 /* TimelineDataSource.swift */; };
 		29CF27061C91891300635BB9 /* TimelineDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CF27051C91891300635BB9 /* TimelineDelegate.swift */; };
 		29EBF99D1CADA014007F5EED /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EBF99C1CADA014007F5EED /* Timeline.swift */; };
+		95A1DD741CB3B35500B8CF61 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1DD731CB3B35500B8CF61 /* DataType.swift */; };
 		E560E018CB2F8FB5D00F5185 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A9AD6B69CBDAFA7E56C1FE3 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		29F7E62D6AE1D8F4BD8CFAC5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5F652FD29697AB82151BE055 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7A9AD6B69CBDAFA7E56C1FE3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95A1DD731CB3B35500B8CF61 /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				29CF26B21C912D7400635BB9 /* Tweet.swift */,
 				29CF26B91C912D7400635BB9 /* Account.swift */,
 				29EBF99C1CADA014007F5EED /* Timeline.swift */,
+				95A1DD731CB3B35500B8CF61 /* DataType.swift */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				29EBF99D1CADA014007F5EED /* Timeline.swift in Sources */,
 				29CF26C81C912E8D00635BB9 /* User.swift in Sources */,
 				29CF26BD1C912D7400635BB9 /* TimelineTableViewController.swift in Sources */,
+				95A1DD741CB3B35500B8CF61 /* DataType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
