@@ -11,7 +11,7 @@ import Foundation
 struct Timeline: DataType {
     typealias ItemType = Tweet
     
-    var items: [ItemType] = []
+    private var items: [ItemType] = []
     
     init(items: [ItemType]) {
         self.items = items

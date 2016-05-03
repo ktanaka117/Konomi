@@ -11,7 +11,6 @@ import Foundation
 protocol DataType {
     associatedtype ItemType
     
-    var items: [ItemType] { get }
     var numberOfItems: Int { get }
     
     subscript(index: Int) -> ItemType { get }
