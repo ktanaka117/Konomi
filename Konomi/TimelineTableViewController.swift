@@ -12,7 +12,6 @@ import AlamofireImage
 class TimelineTableViewController: UITableViewController {
     
     private let timelineDataSource = TimelineDataSource()
-    private let timelineDelegate = TimelineDelegate()
     
     private let refresher = UIRefreshControl()
     
@@ -22,7 +21,6 @@ class TimelineTableViewController: UITableViewController {
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = timelineDataSource
-        tableView.delegate = timelineDelegate
         
         refreshControl = refresher
         refreshControl?.addTarget(self, action: #selector(TimelineTableViewController.refresh), forControlEvents: UIControlEvents.ValueChanged)
@@ -39,6 +37,15 @@ class TimelineTableViewController: UITableViewController {
             self.tableView.reloadData()
             self.refresher.endRefreshing()
         }
+    }
+    
+    // MARK: - UITableViewDelagate
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 90
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 }
